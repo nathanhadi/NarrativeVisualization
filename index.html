@@ -1,1 +1,92 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Where Should I Go To College?</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Where Should I Go To College?</h1>
+
+        <div id="nav-buttons">
+            <button id="prev-button">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+        
+        <div id="scene1-container">
+            <div id="info-paragraph-1" class="info-paragraph">
+                <p>Let's decide where to go to college by first viewing tuition cost based on state in the United States. 
+                    The visualization below shows the average college tuition by state. We can see from the bar chart that
+                    private schools are vastly more expensive than public schools.
+                    Use the dropdown menu to select between All Colleges, Private Colleges, or Public Colleges. 
+                    You can also click on each bar to see more detailed information.</p>
+            </div>
+            <div id="dropdown_1">
+                <label for="college_type">Select Type of College :</label>
+            </div>
+            <div id="chart_1"></div>
+        </div>
+        
+        <div id="scene2-container">
+            <div id="info-paragraph-2" class="info-paragraph">
+                <p>In the scatter plot below, we can see a comparison of the tuition of each college vs the average income 
+                    a graduate makes 10 years after graduating from that school. You can hover over each datapoint to see 
+                    more information on the specific school. On the next page, you will be able to filter the data of this plot more.
+                    From the data, you can see there is a slightly positive linear relationship with higher tuition schools resulting in 
+                    higher paying jobs, but overall the increase in income varies slightly with some colleges being outliers.</p>
+            </div>
+            <div id="chart_2"></div>
+        </div>
+        
+        <div id="scene3-container">
+            <div id="info-paragraph-3" class="info-paragraph">
+                <p>You can explore the college data with the filters below. 
+                    You can use the sliders to filter by income, tuition cost, and number of students. 
+                    You can use the dropdowns to pick type of college and state.
+                    The scatter plot will update based on your criteria.</p>
+            </div>
+            
+            <div id="filters-container">
+                <div class="filter-group">
+                    <label for="income-filter">Minimum Income ($):</label>
+                    <input type="range" id="income-min" min="20000" max="100000" value="20000" step="5000">
+                    <span id="income-display">$20K</span>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="tuition-filter">Maximum Tuition ($):</label>
+                    <input type="range" id="tuition-max" min="10000" max="80000" value="80000" step="5000">
+                    <span id="tuition-display">$80K</span>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="students-filter">Minimum Students:</label>
+                    <input type="range" id="students-min" min="1000" max="50000" value="1000" step="1000">
+                    <span id="students-display">1K</span>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="college-type-filter">College Type:</label>
+                    <select id="college-type-filter">
+                        <option value="all">All Colleges</option>
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="state-filter">State:</label>
+                    <select id="state-filter">
+                        <option value="all">All States</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="chart_3"></div>
+        </div>
+    </div>
+
+    <script src="visualization.js"></script>
+</body>
+</html>
