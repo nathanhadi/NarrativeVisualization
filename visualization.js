@@ -466,7 +466,7 @@ function updateScene3() {
         .attr("text-anchor", "middle")
         .text("Tuition Cost vs. Income After Graduation");
 
-    addAnnotation(svg3, "Use filters to explore");
+    addAnnotation(svg3, "Hover for school details");
 }
 
 function addAnnotation(svg, text, x = 100, y = 50) {
