@@ -476,8 +476,8 @@ function addAnnotation(svg, text, x = 100, y = 50) {
 
     annotation.append("rect")
         .attr("x", x - 10)
-        .attr("y", y - 15)
-        .attr("width", 170)
+        .attr("y", y - 20)
+        .attr("width", 180)
         .attr("height", 30)
         .attr("fill", "lightgray")
         .attr("opacity", 0.5)
