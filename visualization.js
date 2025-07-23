@@ -263,6 +263,8 @@ function createScene1(college_type = "all") {
         .attr("y", -10)
         .attr("text-anchor", "middle")
         .text(`Average College Tuition by State - ${titleText}`);
+
+    addAnnotation(svg1, "Click bars for details");
 }
 
 // Scene 2: Compare Tuition vs Income 10 Years after graduation
@@ -343,6 +345,8 @@ function createScene2() {
         .attr("y", -10)
         .attr("text-anchor", "middle")
         .text("Tuition Cost vs. Income (10 Years) After Graduation");
+
+    addAnnotation(svg2, "Hover for school details");
 }
 
 // Scene 3: User Exploration with filters -> Income, Tuition, Number of Students, State, College Type
@@ -461,6 +465,29 @@ function updateScene3() {
         .attr("y", -10)
         .attr("text-anchor", "middle")
         .text("Tuition Cost vs. Income After Graduation");
+
+    addAnnotation(svg3, "Use filters to explore");
+}
+
+function addAnnotation(svg, text, x = 100, y = 50) {
+    svg.select(".annotation").remove();
+
+    const annotation = svg.append("g").attr("class", "annotation");
+
+    annotation.append("rect")
+        .attr("x", x - 10)
+        .attr("y", y - 15)
+        .attr("width", 170)
+        .attr("height", 30)
+        .attr("fill", "lightgray")
+        .attr("opacity", 0.5)
+        .attr("stroke-width", 2);
+
+    annotation.append("text")
+        .attr("x", x)
+        .attr("y", y)
+        .attr("font-weight", "bold")
+        .text(text);
 }
 
 async function loadCollegeData() {
